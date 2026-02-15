@@ -1,34 +1,62 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Button from './components/atoms/Button/Button';
+import Input from './components/atoms/Input/Input'; // Ваш компонент
+import Card from './components/molecules/Card/Card';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const handleLogin = () => {
+    alert('Логіка входу буде реалізована пізніше');
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: '#f0f2f5',
+      }}
+    >
+      <Card>
+        <h2 style={{ marginBottom: '20px', textAlign: 'center' }}>
+          Ласкаво просимо
+        </h2>
+
+        <div style={{ marginBottom: '15px' }}>
+          {/* Використовуйте ваш компонент Input тут */}
+          <Input
+            type="email"
+            placeholder="Email"
+            label="Email"
+          />
+        </div>
+
+        <div style={{ marginBottom: '20px' }}>
+          {/* Використовуйте ваш компонент Input тут */}
+          <Input
+            type="password"
+            placeholder="Пароль"
+            label="Пароль"
+          />
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            gap: '10px',
+            justifyContent: 'center',
+          }}
+        >
+          <Button onClick={handleLogin} variant="primary">
+            Увійти
+          </Button>
+
+          <Button variant="secondary">
+            Реєстрація
+          </Button>
+        </div>
+      </Card>
+    </div>
   );
 }
 

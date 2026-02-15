@@ -1,0 +1,42 @@
+import styles from './Input.module.css';
+
+const Input = ({ type = 'text', placeholder = '', label = null }) => {
+  return (
+    <div className={styles.wrapper}>
+      {label && <label className={styles.label}>{label}</label>}
+      <input
+        type={type}
+        placeholder={placeholder}
+        className={styles.input}
+      />
+    </div>
+  );
+};
+
+export default Input;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 14px;
+  color: #444;
+}
+
+.input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
