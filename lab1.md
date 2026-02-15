@@ -1,3 +1,4 @@
+Input.jsx
 import styles from './Input.module.css';
 
 const Input = ({ type = 'text', placeholder = '', label = null }) => {
@@ -14,6 +15,8 @@ const Input = ({ type = 'text', placeholder = '', label = null }) => {
 };
 
 export default Input;
+
+Input.module.css
 
 .wrapper {
   display: flex;
